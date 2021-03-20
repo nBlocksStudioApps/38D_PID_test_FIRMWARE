@@ -1,5 +1,6 @@
-BUILD\LPC1768\GCC_ARM\main.o: main.cpp \
- BUILD/LPC1768/GCC_ARM\mbed_config.h nlib\nblocks.h mbed-os/mbed.h \
+BUILD\LPC1768\GCC_ARM\nlib\OLEDisplay\OLEDisplay.o: \
+ nlib\OLEDisplay\OLEDisplay.cpp BUILD/LPC1768/GCC_ARM\mbed_config.h \
+ nlib\OLEDisplay\OLEDisplay.h mbed-os/mbed.h \
  mbed-os/platform/mbed_version.h mbed-os/platform/mbed_toolchain.h \
  mbed-os/platform/mbed_preprocessor.h mbed-os/platform/platform.h \
  mbed-os/platform/mbed_retarget.h mbed-os/platform/mbed_toolchain.h \
@@ -75,10 +76,7 @@ BUILD\LPC1768\GCC_ARM\main.o: main.cpp \
  mbed-os/hal/mpu_api.h mbed-os/platform/ScopedRamExecutionLock.h \
  mbed-os/platform/mbed_stats.h mbed-os/platform/Callback.h \
  mbed-os/platform/FunctionPointer.h mbed-os/platform/ScopedLock.h \
- nlib/KernelNode/nworkbench.h nlib/KernelNode/fifo.h nlib\Ticker\ticker.h \
- nlib\Thermistor\thermistor.h nlib\PID\PID.h nlib\PID\pid_controller.h \
- nlib\PWM\pwm.h nlib\StringFormat\stringformat.h \
- nlib\StringSerial\stringserial.h nlib\OLEDisplay\OLEDisplay.h \
+ nlib/KernelNode/nworkbench.h nlib/KernelNode/fifo.h \
  nlib/OLEDisplay/Adafruit_GFX/Adafruit_SSD1306.h \
  nlib/OLEDisplay/Adafruit_GFX/Adafruit_GFX.h \
  nlib/OLEDisplay/Adafruit_GFX/Adafruit_GFX_Config.h \
