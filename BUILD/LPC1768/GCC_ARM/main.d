@@ -77,9 +77,5 @@ BUILD\LPC1768\GCC_ARM\main.o: main.cpp \
  mbed-os/platform/FunctionPointer.h mbed-os/platform/ScopedLock.h \
  nlib/KernelNode/nworkbench.h nlib/KernelNode/fifo.h nlib\Ticker\ticker.h \
  nlib\Thermistor\thermistor.h nlib\PID\PID.h nlib\PID\pid_controller.h \
- nlib\PWM\pwm.h nlib\StringFormat\stringformat.h \
- nlib\StringSerial\stringserial.h nlib\OLEDisplay\OLEDisplay.h \
- nlib/OLEDisplay/Adafruit_GFX/Adafruit_SSD1306.h \
- nlib/OLEDisplay/Adafruit_GFX/Adafruit_GFX.h \
- nlib/OLEDisplay/Adafruit_GFX/Adafruit_GFX_Config.h \
- nlib/OLEDisplay/Adafruit_GFX/Adafruit_GFX.h
+ nlib\PWM\pwm.h nlib\StringSerial\stringserial.h \
+ nlib\StringFormat\stringformat.h
