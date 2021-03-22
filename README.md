@@ -11,38 +11,53 @@ Testing program translated from schematic Design [38D_PID_test_SCHEMATIC
 <p align="center">
 <img
 src="img/01.PNG"
-width = 800
+width = 900
 />
 </p>
 
 ----
 
+<!-- pagebreak -->
+
+
 ## Setup
 
->  Left: Hot End and thermocouple probe  
->  Middle: n-3DP board  
->  Right: Overall setup
+>  Left: Hot-End and external thermocouple probe  
+>  Right: PID runs in n-3DP board, witrh sampling rate 200ms, driving the Hot-End 
+
 
 ----
 
 <img
 src="img/06.PNG"
-width = 300
+height = 440
 />
 <img
 src="img/04.GIF"
-height = 300
+height = 440
+/>
+
+----
+
+[n-3DP]() motion control/3D printer motherboardc with n-PRO-10 LPC1768 microcontroller board.  
+ *  LPC1768 PWM output drives the power MOSFET which powers the Hot-End (white/red pair of cables )
+ *  The Thermistor is connected to the terrminal Block, filtered and then connected to an LPC1768 ADC input (black pair of cables)
+ 
+<img
+src="img/17.PNG"
+width = 8900
 />
 
 
 ----
 
+<!-- pagebreak -->
 
 ## Temperature controll results
 
 >  Left: Stabilized temeprature at 60 °C measured by Thermistor  
 >  Middle: Temeperature measured with an external Thermocouple probe  
->  Right: Current consumption is stabilized at 163 mA
+>  Right: n-3DP supplied with 19V and the the Current consumption is stabilized at 135 mA (Power  = 2.5W)
 ----
 
 <img
@@ -60,7 +75,7 @@ height = 250
 
 ----
 
-
+<!-- pagebreak -->
 ## Thermistor Node
 
 Thermistor Node with an added debugging printf(), prints the ADC value for the temperature value it exports. 
@@ -79,6 +94,8 @@ height = 350
 
 The formula used in the Node C++ code is validated and confirmed using and excel spreadsheet and online Thermistor calculators. The theoretical Temperature value for the corresponding ADC measurement is precise. Measuring with the Multimeter indicates a slight difference from the measured voltage from ADC. 
 
+<!-- pagebreak -->
+
 ### Conclusion on Thermistor Node precision
 The Thermistor Node works good, the ADC Hardware front-end needs some improvement, but the precision is still good for a hot-end temperature control.
 
@@ -91,6 +108,7 @@ width = 900
 
 ----
 
+<!-- pagebreak -->
 ## PID control evaluation
 
 ----
@@ -122,5 +140,16 @@ width = 900
 </p>
 
 Plotted with Arduino plotter.
+
+----
+
+Disturbing the heat balance, by blowing air for 1 sec to the hot-end and recovery
+
+<p align="center">
+<img
+src="img/16.PNG"
+width = 900
+/>
+</p>
 
 ----
