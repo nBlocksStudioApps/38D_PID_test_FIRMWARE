@@ -4,6 +4,53 @@ Testing program for the nBlocksStudio Node [PID](https://github.com/nBlocksStudi
 ](https://github.com/nBlocksStudioApps/38D_PID_test_SCHEMATIC). Controlls a 40W 3D-printer heating element with PWM via power-MOSFET, using a Thermistor for temperature sensing.
 
 
+## Node [PID](https://github.com/nBlocksStudioNodes/nblocks_pid)
+
+<p align="center">
+<img
+src="img/Slide51.PNG"
+width = 900
+/>
+</p>
+
+<!-- pagebreak -->
+
+## Node [PID](https://github.com/nBlocksStudioNodes/nblocks_pid) details
+PID controller calculates an `error` value as the difference between a measured `Input` and a desired `setpoint`. The controller attempts to minimize the `error` by adjusting an `Output`
+(source Wikipedia)
+
+<p align="center">
+<img
+src="img/0101.PNG"
+width = 450
+/>
+</p>
+
+>   *  Category: Function
+>   *  HAL: No Hardware dependencies
+>   *  Status: Node defined and Compiled
+>   *  Author: Nikolaos Chalikias
+
+### Inputs/Outputs
+>   *  (schematic pin 2) float: `Input` (sensed) value 
+>   *  (schematic pin 1)  Input: All PID parameters in form of array `* float`: 9 values: [Kp, Ki, Kd, stime, minOutput, MaxOutput, PIDmode(0.0 or 1.0) , PIDdirection (0.0 or 1.0), Setpoint]. Overrides the default values
+
+>   *  (schematic pin 3) uint32_t: `Output` (controlling) value, normalized to 0xFFFF
+
+### Parameters 
+>   *  float: Kp default
+>   *  float: Ki default
+>   *  float: Kd default
+>   *  float: stime: sampling time in sec: default
+>   *  float: minOutput: default
+>   *  float: maxOutput: default:  in current implementation is limited internally to <=1
+>   *  PIDMode:  MANUAL, AUTOMATIC: default 
+>   *  PIDDirection: DIRECT, REVERSE: default
+>   *  float: setp: Setpoint: default
+
+<!-- pagebreak -->
+
+
 
 ## nBlocksStudio Schematic Design
 
@@ -20,17 +67,13 @@ width = 900
 * N4: The thermistor Node is configured for:
    *  Microcontroller ADC-pin to be used for measuring the Thermistor voltage.
    *  The Thermistor characteristics and Bias
-* N5: The PID Node configured with:
-   *  PID-Coefficients
-   *  Temperature set at 60 °C
+* N5: The PID Node configured with: PID-Coefficients & Temperature set at 60 °C
 * N6: The PWM Node drives the Heating ellement via a Power-Mosfet from Microcontroller pin P2.5
 * N9 and N8 are used for dedugging / Monitoring via USB PC connection and a serial Terminal.
 
 <!-- pagebreak -->
 
-
 ## Setup
-
 >  Hot-End and an external thermocouple probe for temperature validation (red cable) 
 <p align="center">
 <img
@@ -50,13 +93,13 @@ width = 250
 ----
 <!-- pagebreak -->
 
-[n-3DP]() motion control/3D printer motherboardc with n-PRO-10 LPC1768 microcontroller board.  
- *  LPC1768 PWM output drives the power MOSFET which powers the Hot-End (white/red pair of cables )
- *  The Thermistor is connected to the terrminal Block, filtered and then connected to an LPC1768 ADC input (black pair of cables)
+>  [n-3DP]() motion control/3D printer motherboardc with n-PRO-10 LPC1768 microcontroller board.  
+>   *  LPC1768 PWM output drives the power MOSFET which powers the Hot-End (white/red pair of cables )
+>   *  The Thermistor is connected to the terrminal Block, filtered and then connected to an LPC1768 ADC input (black pair of cables)
  
 <img
 src="img/17.PNG"
-width = 800
+width = 900
 />
 
 
