@@ -51,7 +51,7 @@ width = 450
 
 
 
-## nBlocksStudio LoCode NoCode float:Design
+## nBlocksStudio LoCode NoCode Design
 
 <p align="center">
 <img
@@ -61,14 +61,14 @@ width = 900
 </p>
 
 ----
-* N1: The KernelNode is configured for mbed
-* N3: The ticker is configured to trigger the sensing / control loop, every  200ms
-* N4: The thermistor Node is configured for:
+* `N1:` The KernelNode is configured for mbed
+* `N3:` The ticker is configured to trigger the sensing / control loop, every  200ms
+* `N4:` The thermistor Node is configured for:
    *  Microcontroller ADC-pin to be used for measuring the Thermistor voltage.
    *  The Thermistor characteristics and Bias
-* N5: The PID Node configured with: PID-Coefficients & Temperature set at 60 °C
-* N6: The PWM Node drives the Heating ellement via a Power-Mosfet from Microcontroller pin P2.5
-* N9 and N8 are used for dedugging / Monitoring via USB PC connection and a serial Terminal.
+* `N5:` The PID Node configured with: PID-Coefficients & Temperature set at 60 °C
+* `N6:` The PWM Node drives the Heating ellement via a Power-Mosfet from Microcontroller pin P2.5
+* `N9, N8` are used for dedugging / Monitoring via USB PC connection and a serial Terminal.
 
 <!-- pagebreak -->
 
