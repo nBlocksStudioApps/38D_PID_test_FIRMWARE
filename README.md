@@ -1,12 +1,11 @@
 # [38D_PID_test](https://github.com/nBlocksStudioApps/38D_PID_test_FIRMWARE)
 
-Testing program translated from schematic Design [38D_PID_test_SCHEMATIC
-](https://github.com/nBlocksStudioApps/38D_PID_test_SCHEMATIC) for the Node [PID](https://github.com/nBlocksStudioNodes/nblocks_pid), controlling a heating element with a PWM driven power MOSFET and a Thermistor for sensing element.
+Testing program for the nBlocksStudio Node [PID](https://github.com/nBlocksStudioNodes/nblocks_pid). The C++ source code, is automatically generated from the schematic Design [38D_PID_test_SCHEMATIC
+](https://github.com/nBlocksStudioApps/38D_PID_test_SCHEMATIC). Controlls a 40W 3D-printer heating element with PWM via power-MOSFET, using a Thermistor for temperature sensing.
 
 
 
 ## nBlocksStudio Schematic Design
-
 
 <p align="center">
 <img
@@ -16,28 +15,40 @@ width = 900
 </p>
 
 ----
+* N1: The KernelNode is configured for mbed
+* N3: The ticker is configured to trigger the sensing / control loop, every  200ms
+* N4: The thermistor Node is configured for:
+   *  Microcontroller ADC-pin to be used for measuring the Thermistor voltage.
+   *  The Thermistor characteristics and Bias
+* N5: The PID Node configured with:
+   *  PID-Coefficients
+   *  Temperature set at 60 °C
+* N6: The PWM Node drives the Heating ellement via a Power-Mosfet from Microcontroller pin P2.5
+* N9 and N8 are used for dedugging / Monitoring via USB PC connection and a serial Terminal.
 
 <!-- pagebreak -->
 
 
 ## Setup
 
->  Left: Hot-End and external thermocouple probe  
->  Right: PID runs in n-3DP board, witrh sampling rate 200ms, driving the Hot-End 
-
-
-----
-
+>  Hot-End and an external thermocouple probe for temperature validation (red cable) 
+<p align="center">
 <img
 src="img/06.PNG"
-height = 440
+width = 250
 />
+</p>
+
+>  The PID test program runs in a n-3DP board, with sampling rate 200ms, driving the Hot-End 
+<p align="center">
 <img
 src="img/04.GIF"
-height = 440
+width = 250
 />
+</p>
 
 ----
+<!-- pagebreak -->
 
 [n-3DP]() motion control/3D printer motherboardc with n-PRO-10 LPC1768 microcontroller board.  
  *  LPC1768 PWM output drives the power MOSFET which powers the Hot-End (white/red pair of cables )
@@ -45,7 +56,7 @@ height = 440
  
 <img
 src="img/17.PNG"
-width = 8900
+width = 800
 />
 
 
@@ -55,25 +66,31 @@ width = 8900
 
 ## Temperature controll results
 
->  Left: Stabilized temeprature at 60 °C measured by Thermistor  
->  Middle: Temeperature measured with an external Thermocouple probe  
->  Right: n-3DP supplied with 19V and the the Current consumption is stabilized at 135 mA (Power  = 2.5W)
-----
+>  Top: Stabilized temeprature at 60 °C measured by Thermistor  
 
+<p align="center">
 <img
 src="img/02.GIF"
-height = 250
+width = 250
 />
+</p>
+
+>  Middle: Temeperature measured with an external Thermocouple probe  
+<p align="center">
 <img
 src="img/05.GIF"
-height = 250
+width = 150
 />
+</p>
+
+>  Bottom: n-3DP supplied with 19V and the the Current consumption is stabilized at 135 mA (Power  = 2.5W)
+
+<p align="center">
 <img
 src="img/07.PNG"
-height = 250
+width = 150
 />
-
-----
+</p>
 
 <!-- pagebreak -->
 ## Thermistor Node
@@ -82,17 +99,18 @@ Thermistor Node with an added debugging printf(), prints the ADC value for the t
 <p align="center">
 <img
 src="img/15.PNG"
-height = 350
-/>
-<img
-src="img/09.GIF"
-height = 350
+width = 500
 />
 </p>
 
-----
+<p align="center">
+<img
+src="img/09.GIF"
+width = 250
+/>
+</p>
 
-The formula used in the Node C++ code is validated and confirmed using and excel spreadsheet and online Thermistor calculators. The theoretical Temperature value for the corresponding ADC measurement is precise. Measuring with the Multimeter indicates a slight difference from the measured voltage from ADC. 
+The formula used in the Node C++ code is validated and confirmed using an excel spreadsheet and online Thermistor calculators. The theoretical Temperature value for the corresponding ADC measurement is precise. Measuring with the Multimeter indicates a slight difference from the measured voltage from ADC. 
 
 <!-- pagebreak -->
 
@@ -119,7 +137,7 @@ width = 900
 />
 
 
-After trial and error, the values below result an acceptable controlling performance
+After trial and error, the values below result in an acceptable controlling performance.
 *  P = 0.2 
 *  I = 0.025 
 *  D = 0 
@@ -143,7 +161,8 @@ Plotted with Arduino plotter.
 
 ----
 
-Disturbing the heat balance, by blowing air for 1 sec to the hot-end and recovery
+Disturbing the heat balance, by *just slightly-blowing air for 1 sec*, to the hot-end.  
+The Sensing and PID system is sensitive enough, to detect and correct the deviation.
 
 <p align="center">
 <img

@@ -75,7 +75,8 @@ BUILD\LPC1768\GCC_ARM\main.o: main.cpp \
  mbed-os/hal/mpu_api.h mbed-os/platform/ScopedRamExecutionLock.h \
  mbed-os/platform/mbed_stats.h mbed-os/platform/Callback.h \
  mbed-os/platform/FunctionPointer.h mbed-os/platform/ScopedLock.h \
- nlib/KernelNode/nworkbench.h nlib/KernelNode/fifo.h nlib\Ticker\ticker.h \
+ nlib/KernelNode/nworkbench.h nlib/KernelNode/fifo.h \
+ nlib\KernelFramePulse\kernelframepulse.h nlib\Ticker\ticker.h \
  nlib\Thermistor\thermistor.h nlib\PID\PID.h nlib\PID\pid_controller.h \
  nlib\PWM\pwm.h nlib\StringSerial\stringserial.h \
  nlib\StringFormat\stringformat.h
