@@ -26,33 +26,32 @@ width = 450
 />
 </p>
 
->   *  Category: Function
->   *  HAL: No Hardware dependencies
->   *  Status: Node defined and Compiled
->   *  Author: Nikolaos Chalikias
+>   *  `Category:` Function
+>   *  `HAL:` No Hardware dependencies
+>   *  `Status:` Node defined and Compiled
+>   *  `Author:` Nikolaos Chalikias
 
 ### Inputs/Outputs
->   *  (schematic pin 2) float: `Input` (sensed) value 
->   *  (schematic pin 1)  Input: All PID parameters in form of array `* float`: 9 values: [Kp, Ki, Kd, stime, minOutput, MaxOutput, PIDmode(0.0 or 1.0) , PIDdirection (0.0 or 1.0), Setpoint]. Overrides the default values
-
->   *  (schematic pin 3) uint32_t: `Output` (controlling) value, normalized to 0xFFFF
+>   *  `schematic pin 1` float: `Input` (sensed/measured) value 
+>   *  `schematic pin 2`  Input: All PID parameters in form of array `* float`: 9 values: [Kp, Ki, Kd, stime, minOutput, MaxOutput, PIDmode(0.0 or 1.0) , PIDdirection (0.0 or 1.0), Setpoint]. **If used, overrides the default Parameter values**
+>   *  `schematic pin 3` uint32_t: `Output` (controlling) value, normalized to 0xFFFF
 
 ### Parameters 
->   *  float: Kp default
->   *  float: Ki default
->   *  float: Kd default
->   *  float: stime: sampling time in sec: default
->   *  float: minOutput: default
->   *  float: maxOutput: default:  in current implementation is limited internally to <=1
->   *  PIDMode:  MANUAL, AUTOMATIC: default 
->   *  PIDDirection: DIRECT, REVERSE: default
->   *  float: setp: Setpoint: default
+>   *  float: **Kp** default
+>   *  float: **Ki** default
+>   *  float: **Kd** default
+>   *  float: **stime**: sampling time in sec default
+>   *  float: **minOutput** default
+>   *  float: **maxOutput** default: In current implementation it is limited internally to <=1
+>   *  string:**PIDMode**:  MANUAL, AUTOMATIC default 
+>   *  string:**PIDDirection**: DIRECT, REVERSE default
+>   *  float: **setp**: Setpoint default
 
 <!-- pagebreak -->
 
 
 
-## nBlocksStudio Schematic Design
+## nBlocksStudio LoCode NoCode float:Design
 
 <p align="center">
 <img
