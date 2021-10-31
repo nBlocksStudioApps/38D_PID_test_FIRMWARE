@@ -28,7 +28,7 @@ width = 450
 
 >   *  `Category:` Function
 >   *  `HAL:` No Hardware dependencies
->   *  `Status:` Node defined and Compiled
+>   *  `Status:` Node Defined, Compiled, Tested, Evaluated
 >   *  `Author:` Nikolaos Chalikias
 
 ### Inputs/Outputs
@@ -61,13 +61,14 @@ width = 900
 </p>
 
 ----
-* `N1:` The KernelNode is configured for mbed
+* `N1:` The KernelNode is configured for `n-Blocks Studio 2.0 mbed kernel`
+* `N2:` Configure LED4 to be ON during Kernel Active time, to watch system integrity
 * `N3:` The ticker is configured to trigger the sensing / control loop, every  200ms
 * `N4:` The thermistor Node is configured for:
    *  Microcontroller ADC-pin to be used for measuring the Thermistor voltage.
    *  The Thermistor characteristics and Bias
 * `N5:` The PID Node configured with: PID-Coefficients & Temperature set at 60 °C
-* `N6:` The PWM Node drives the Heating ellement via a Power-Mosfet from Microcontroller pin P2.5
+* `N6:` The PWM Node drives the Heater via a Power-Mosfet from Microcontroller pin P2.5
 * `N9, N8` are used for dedugging / Monitoring via USB PC connection and a serial Terminal.
 
 <!-- pagebreak -->
@@ -152,7 +153,7 @@ width = 250
 />
 </p>
 
-The formula used in the Node C++ code is validated and confirmed using an excel spreadsheet and online Thermistor calculators. The theoretical Temperature value for the corresponding ADC measurement is precise. Measuring with the Multimeter indicates a slight difference from the measured voltage from ADC. 
+The formula used in the Node C++ code is validated and confirmed using an excel spreadsheet and online Thermistor calculators. The theoretical Temperature value for the corresponding ADC measurement is precise. Measuring with the Multimeter indicates a slight difference from the ADC measured voltage. 
 
 <!-- pagebreak -->
 
